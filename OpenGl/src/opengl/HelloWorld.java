@@ -3,11 +3,13 @@ package opengl;
 import org.lwjgl.opengl.GL;
 
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.*; //for the hints gl
+import static org.lwjgl.opengl.GL45.*; //gl version
 import static org.lwjgl.system.MemoryUtil.*;
  
 public class HelloWorld {
-    private long windowID;
+    public static long windowID;
+    private float rotateX, rotateY, rotateZ; //set up rotation
     
     public HelloWorld(){
          /*
@@ -52,24 +54,27 @@ public class HelloWorld {
         
     }
     
-    public void init()
-    {
+    public void init(){
     }
 
-    public void update(float delta)
-    {
+    public void update(float delta){
+        //rotateX = Mouse.getX(); 
+        Input.updateInputKey();
+        Input.updateMouseCoordinate();//upadate the information about the mouse axe
+        
+        if(glfwGetKey(windowID, GLFW_KEY_SPACE) == GLFW_PRESS){//send an int constant
+            System.out.println("key space pressed");
+        }
+        System.out.println("mouse Axes: X: " + Input.getMouseX() + "Y: " + Input.getMouseY());
     }
 
-    public void render(float delta)
-    {
+    public void render(float delta){
     }
 
-    public void dispose()
-    {
+    public void dispose(){
     }
     
-    public void start()
-    {
+    public void start(){
         float now, last, delta;
 
         last = 0;
