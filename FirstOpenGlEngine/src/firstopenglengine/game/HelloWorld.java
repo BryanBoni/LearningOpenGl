@@ -1,4 +1,4 @@
-package firstopenglengine;
+package firstopenglengine.game;
 
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
@@ -15,7 +15,7 @@ public class HelloWorld {
 	private long window;
 
 	public void run() {
-		System.out.println("Hello LWJGL " + Version.getVersion() + "!");
+		System.out.println("Atom engine V0.1 under " + Version.getVersion() + "!");
 
 		try {
 			init();
@@ -49,7 +49,7 @@ public class HelloWorld {
 		int HEIGHT = 300;
 
 		// Create the window
-		window = glfwCreateWindow(WIDTH, HEIGHT, "Hello World!", NULL, NULL);
+		window = glfwCreateWindow(WIDTH, HEIGHT, "Atom engine V0.1", NULL, NULL);
 		if ( window == NULL )
 			throw new RuntimeException("Failed to create the GLFW window");
 
@@ -100,9 +100,9 @@ public class HelloWorld {
 			glfwPollEvents();
 		}
 	}
-
+/*
 	public static void main(String[] args) {
 		new HelloWorld().run();
 	}
-
+*/
 }
