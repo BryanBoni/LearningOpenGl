@@ -4,6 +4,7 @@ import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 
+
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
@@ -15,8 +16,7 @@ public class HelloWorld {
 	private long window;
 
 	public void run() {
-		System.out.println("Hello LWJGL " + Version.getVersion() + "!");
-
+		System.out.println("Starting LWJGL  version " + Version.getVersion() + ".");
 		try {
 			init();
 			loop();
@@ -45,11 +45,11 @@ public class HelloWorld {
 		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // the window will stay hidden after creation
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
 
-		int WIDTH = 300;
-		int HEIGHT = 300;
+		int WIDTH = 600;
+		int HEIGHT = 600;
 
 		// Create the window
-		window = glfwCreateWindow(WIDTH, HEIGHT, "Hello World!", NULL, NULL);
+		window = glfwCreateWindow(WIDTH, HEIGHT, "Atome engine v.0.1", NULL/*glfwGetPrimaryMonitor()*/, NULL);
 		if ( window == NULL )
 			throw new RuntimeException("Failed to create the GLFW window");
 
@@ -98,8 +98,15 @@ public class HelloWorld {
 			// Poll for window events. The key callback above will only be
 			// invoked during this call.
 			glfwPollEvents();
+                        
+                        update();
+                        
 		}
 	}
+        
+        private void update(){
+            
+        }
 
 	public static void main(String[] args) {
 		new HelloWorld().run();
