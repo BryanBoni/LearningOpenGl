@@ -1,5 +1,7 @@
 package firstopenglengine.engine;
 
+import static org.lwjgl.opengl.NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX;
+
 /**
  * The engine of the game, where the game loop is played, GameEngine class
  * provides a start method which just starts our Thread so run method will be
@@ -80,6 +82,8 @@ public class GameEngine implements Runnable {
             if (!window.isvSync()) {
                 sync();
             }
+            
+            System.out.println("Memoire disponible du GPU :" + GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX);
         }
     }
 

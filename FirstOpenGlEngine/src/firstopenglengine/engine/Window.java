@@ -10,6 +10,7 @@ import static org.lwjgl.opengl.GL11.GL_FALSE;
 import static org.lwjgl.opengl.GL11.GL_TRUE;
 import static org.lwjgl.opengl.GL11.glClearColor;
 import static org.lwjgl.system.MemoryUtil.NULL;
+import org.lwjgl.opengl.NVXGPUMemoryInfo;
 
 /**
  * Main window of the game.
