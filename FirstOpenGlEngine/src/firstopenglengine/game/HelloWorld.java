@@ -1,3 +1,6 @@
+/**
+ * test the good use of lwjgl 3 library.
+ */
 package firstopenglengine.game;
 
 import org.lwjgl.*;
