@@ -21,7 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
-package model.math;
+package firstopenglengine.engine.math;
 
 import java.nio.FloatBuffer;
 
