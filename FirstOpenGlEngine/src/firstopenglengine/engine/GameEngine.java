@@ -51,6 +51,8 @@ public class GameEngine implements Runnable {
             gameLoop();
         } catch (Exception ex) {
             ex.printStackTrace();
+        } finally {
+            cleanup();
         }
     }
 
@@ -83,8 +85,12 @@ public class GameEngine implements Runnable {
                 sync();
             }
             
-            System.out.println("Memoire disponible du GPU :" + GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX);
+            
         }
+    }
+    
+    protected void cleanup(){
+        gameLogic.cleanup();
     }
 
     private void sync() {
